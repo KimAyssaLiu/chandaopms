@@ -1,14 +1,12 @@
 language: bash
 
-
+services:
+  - docker
 
 env:
   - DOCKER_COMPOSE_VERSION="1.25.4" SLEEP_TIME=240 PORT=80
 
-sudo: required
-
-services:
-  - docker
+#sudo: required
 
 before_install :
 
