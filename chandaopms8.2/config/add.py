@@ -1,26 +1,27 @@
+import os
 import requests
 
-headers = {"Cache-Control": "max-age=0", "Origin": "http://192.168.1.100", "Upgrade-Insecure-Requests": "1",
+headers = {"Cache-Control": "max-age=0", "Origin": "http://web", "Upgrade-Insecure-Requests": "1",
            "Content-Type": "application/x-www-form-urlencoded",
            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-           "Referer": "http://192.168.1.100/zentao/user-batchCreate-0.html", "Accept-Encoding": "gzip, deflate",
+           "Referer": "http://web/zentao/user-batchCreate-0.html", "Accept-Encoding": "gzip, deflate",
            "Accept-Language": "zh-CN,zh;q=0.9,zh-TW;q=0.8", "Connection": "close"}
 
 def login1():
-    url = "http://192.168.1.100:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"
+    url = "http://web:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"
     cookies = {"lang": "zh-cn", "theme": "default", "windowWidth": "1536", "windowHeight": "722", "sid": "e52t2obj21ll5trk6gt16lgna3"}
 
-    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://192.168.1.100:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"}
+    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://web:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"}
     r = requests.post(url, headers=headers, cookies=cookies, data=data)
 
 
 def login2():
 
-    url = "http://192.168.1.100:80/zentao/index.html"
+    url = "http://web:80/zentao/index.html"
     cookies = {"lang": "zh-cn", "theme": "default", "windowWidth": "1536", "windowHeight": "722", "sid": "e52t2obj21ll5trk6gt16lgna3"}
 
-    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://192.168.1.100:80/zentao/index.html"}
+    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://web:80/zentao/index.html"}
     r = requests.post(url, headers=headers, cookies=cookies, data=data)
 
 
@@ -28,7 +29,7 @@ def login2():
 
 def adddept():
 
-    url = "http://192.168.1.100:80/zentao/dept-manageChild.html"
+    url = "http://web:80/zentao/dept-manageChild.html"
     cookies = {"lang": "zh-cn", "theme": "default", "preProductID": "1", "preBranch": "0", "storyModule": "0", "lastProduct": "1", "productStoryOrder": "id_desc", "windowHeight": "674", "windowWidth": "1519", "sid": "e52t2obj21ll5trk6gt16lgna3"}
 
     data = {"depts[0]": "项目管理部",
@@ -39,8 +40,8 @@ def adddept():
 
 def changename():
 
-    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://192.168.1.100/zentao/my/"}
-    url = "http://192.168.1.100:80/zentao/company-edit.html?onlybody=yes"
+    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://web/zentao/my/"}
+    url = "http://web:80/zentao/company-edit.html?onlybody=yes"
     cookies = {"lang": "zh-cn", "theme": "default", "windowWidth": "564", "windowHeight": "430", "sid": "e52t2obj21ll5trk6gt16lgna3"}
 
     data = {"name": "中国移动", "phone": '10086', "fax": '', "address": 'China,Beijing', "zipcode": '330011', "website": "http://", "backyard": "http://", "guest": "0"}
@@ -49,7 +50,7 @@ def changename():
 
 def adduser():
 
-    url = "http://192.168.1.100:80/zentao/user-batchCreate-0.html"
+    url = "http://web:80/zentao/user-batchCreate-0.html"
     cookies = {"theme": "default", "preProductID": "1", "preBranch": "0", "storyModule": "0", "lastProduct": "1", "productStoryOrder": "id_desc", "qaBugOrder": "id_desc", "lang": "zh-cn", "keepLogin": "on", "za": "admin", "zp": "216c8c31794854639b890f124b767d9adc2df86f", "windowHeight": "722", "windowWidth": "1519", "sid": "e52t2obj21ll5trk6gt16lgna3"}
 
     data = {"dept[0]": "1", "account[0]": "man1", "realname[0]": "man1", "role[0]": "top", "group[0]": "9", "email[0]": "13045258910@163.com", "gender[0]": "f", "password[0]": "654321", "commiter[0]": '', "join[0]": '', "skype[0]": '', "qq[0]": '', "yahoo[0]": '', "gtalk[0]": '', "wangwang[0]": '', "mobile[0]": '', "phone[0]": '', "address[0]": '', "zipcode[0]": '',

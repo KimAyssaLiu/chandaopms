@@ -1,6 +1,7 @@
 #import sys
 #reload(sys)
 #sys.setdefaultencoding('utf-8')
+import os
 import requests
 
 headers = {"Cache-Control": "max-age=0", "Upgrade-Insecure-Requests": "1",
@@ -10,24 +11,24 @@ headers = {"Cache-Control": "max-age=0", "Upgrade-Insecure-Requests": "1",
                "Connection": "close"}
 
 def login1():
-    url = "http://192.168.1.100:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"
+    url = "http://web:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"
     cookies = {"lang": "zh-cn", "theme": "default", "windowWidth": "1536", "windowHeight": "722", "sid": "e52t2obj21ll5trk6gt16lgna3"}
 
-    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://192.168.1.100:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"}
+    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://web:80/zentao/user-login-L3plbnRhby9pbmRleC5odG1s.html"}
     r = requests.post(url, headers=headers, cookies=cookies, data=data)
 
 
 def login2():
 
-    url = "http://192.168.1.100:80/zentao/index.html"
+    url = "http://web:80/zentao/index.html"
     cookies = {"lang": "zh-cn", "theme": "default", "windowWidth": "1536", "windowHeight": "722", "sid": "e52t2obj21ll5trk6gt16lgna3"}
 
-    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://192.168.1.100:80/zentao/index.html"}
+    data = {"account": "admin", "password": "e10adc3949ba59abbe56e057f20f883e", "referer": "http://web:80/zentao/index.html"}
     r = requests.post(url, headers=headers, cookies=cookies, data=data)
 
 
 def fileread():
-    url = "http://192.168.1.100:80/zentao/index.php?m=editor&f=edit&filePath=L29wdC96Ym94L2FwcC96ZW50YW8vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZA==&action=edit"
+    url = "http://web:80/zentao/index.php?m=editor&f=edit&filePath=L29wdC96Ym94L2FwcC96ZW50YW8vLi4vLi4vLi4vLi4vZXRjL3Bhc3N3ZA==&action=edit"
     cookies = {"theme": "default", "preProductID": "1", "preBranch": "0", "storyModule": "0", "lastProduct": "1",
                "productStoryOrder": "id_desc", "qaBugOrder": "id_desc", "lang": "zh-cn", "windowHeight": "722",
                "windowWidth": "1536", "sid": "e52t2obj21ll5trk6gt16lgna3"}
