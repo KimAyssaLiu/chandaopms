@@ -9,9 +9,11 @@ ADD /config/requirements.txt /opt/config/requirements.txt
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r /opt/config/requirements.txt
 ADD /config/add.py /opt/config/add.py
 ADD /config/addproj.py /opt/config/addproj.py
+
+RUN chmod +x /config/autoscript.sh
 ADD /config/autoscript.sh /opt/config/autoscript.sh
 
-RUN chmod +x /opt/config/autoscript.sh
+#RUN chmod +x /opt/config/autoscript.sh
 
 
 
