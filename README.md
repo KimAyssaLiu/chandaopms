@@ -1,2 +1,3 @@
-# chandaopms
-test travis ci
+### chandaopms
+
+`sudo docker-compose up -d`
